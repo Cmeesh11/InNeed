@@ -1,4 +1,4 @@
-const jobSeekerRouter = require('exprees').Router();
+const jobSeekerRouter = require('express').Router();
 
 
 module.exports = jobSeekerRouter;
