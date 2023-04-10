@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const jobSeekerRouter = require('./jobSeeker');
-const employer = require('./employer');
+const employerRouter = require('./employer');
 
 router.use('/jobSeeker', jobSeekerRouter);
 router.use('/employer', employerRouter);
