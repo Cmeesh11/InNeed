@@ -38,9 +38,9 @@ This project uses the MIT license.
 
 [Carter Michaud](https://github.com/Cmeesh11)
 
-[Jacob Milojkovich]()
+[Jacob Milojkovich](https://github.com/Jakemilo1)
 
-[Owen Olson]()
+[Owen Olson](https://github.com/owennolson)
 
 [Nate Long](https://github.com/Tunestring)
 
