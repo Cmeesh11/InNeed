@@ -34,7 +34,7 @@ npm i -y
 
 This project uses the MIT license.
 
-## Project Contributers
+## Project Contributors
 
 [Carter Michaud](https://github.com/Cmeesh11)
 
