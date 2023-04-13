@@ -43,9 +43,7 @@ Employer.init(
         userInstance.password = await bcrypt.hash(userInstance.password, 10);
         return userInstance;
       }
-    }
-  },
-  {
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
