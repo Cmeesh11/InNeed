@@ -8,7 +8,7 @@ router.use('/employer', employerRouter);
 
 // Routes go here
 
-router.get('/', async function(req, res) {
+router.get('/', async function (req, res) {
   try {
     const posts = await Post.findAll();
     res.render('homepage', {
@@ -28,3 +28,13 @@ router.get('/login', async (req, res) => {
   }
 });
 module.exports = router;
+
+// Route: Destroy session
+router.get('/logout', (req, res) => {
+  try {
+    req.session.destroy();
+    res.redirect('/login');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
