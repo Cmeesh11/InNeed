@@ -1,7 +1,12 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const bcrypt = require('bcrypt');
 
-class JobSeeker extends Model {}
+class JobSeeker extends Model {
+  checkPassword(loginPw){
+    return bcrypt.compareSync(loginPw, this.password)
+  }
+}
 
 JobSeeker.init(
   {
@@ -21,6 +26,12 @@ JobSeeker.init(
     },
   },
   {
+    hooks: {
+      async beforeCreate(userInstance) {
+        userInstance.password = await bcrypt.hash(userInstance.password, 10);
+        return userInstance;
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
