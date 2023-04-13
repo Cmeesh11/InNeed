@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { employer, jobSeeker } = require('../models')
+const { Employer, JobSeeker } = require('../models')
 const jobSeekerRouter = require('./jobSeeker');
 const employerRouter = require('./employer');
 
