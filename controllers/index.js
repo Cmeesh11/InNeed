@@ -7,6 +7,14 @@ router.use('/jobSeeker', jobSeekerRouter);
 router.use('/employer', employerRouter);
 
 // Routes go here
+
+router.get('/', function(req, res) {
+    try {
+    res.render('homepage', {loggedIn: req.session.loggedIn})
+} catch (err) {
+    res.status(500).json(err);
+  }})
+
 router.get('/login', async (req, res) => { 
     try {
       res.render('login');
