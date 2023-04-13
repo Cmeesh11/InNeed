@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Employer, JobSeeker } = require('../models')
+const { Employer, JobSeeker } = require('../models');
 const jobSeekerRouter = require('./jobSeeker');
 const employerRouter = require('./employer');
 
@@ -8,22 +8,21 @@ router.use('/employer', employerRouter);
 
 // Routes go here
 
-router.get('/', function(req, res) {
-    try {
+router.get('/', function (req, res) {
+  try {
     res.render('homepage', {
-      loggedIn: req.session.loggedIn,
-
-    
-    })
-} catch (err) {
-    res.status(500).json(err);
-  }})
-
-router.get('/login', async (req, res) => { 
-    try {
-      res.render('login');
-    } catch (err) {
-        res.status(500).json(err);
-    }
+      loggedIn: req.session.loggedIn
     });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/login', async (req, res) => {
+  try {
+    res.render('login');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
