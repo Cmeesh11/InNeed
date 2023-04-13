@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const { employer, jobSeeker } = require('../models')
 const jobSeekerRouter = require('./jobSeeker');
 const employerRouter = require('./employer');
 
@@ -10,7 +10,11 @@ router.use('/employer', employerRouter);
 
 router.get('/', function(req, res) {
     try {
-    res.render('homepage', {loggedIn: req.session.loggedIn})
+    res.render('homepage', {
+      loggedIn: req.session.loggedIn,
+
+    
+    })
 } catch (err) {
     res.status(500).json(err);
   }})
