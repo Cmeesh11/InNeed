@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Employer extends Model {}
 
@@ -9,23 +9,35 @@ Employer.init(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      allowNull: false,
+      allowNull: false
     },
-    name: {
+    email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
+    },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    company: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
+      allowNull: false
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "employer",
+    modelName: 'employer'
   }
 );
 
