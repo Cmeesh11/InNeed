@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
@@ -9,19 +9,19 @@ Post.init(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      allowNull: false,
+      allowNull: false
     },
     job_title: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     salary: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    location: {
-      type: DataTypes.STRING,
       allowNull: false
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     requirements: {
       type: DataTypes.STRING,
@@ -29,7 +29,7 @@ Post.init(
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: false
     },
     employer_id: {
       type: DataTypes.INTEGER,
@@ -44,7 +44,7 @@ Post.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "post",
+    modelName: 'post'
   }
 );
 
