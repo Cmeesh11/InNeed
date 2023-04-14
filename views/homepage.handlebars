@@ -1,10 +1,9 @@
-{{!-- CARD IDEA FOR RETURN RESULTS FOR JOB BOARD - WIP  --}}
 <div class="card" style="width: 18rem;">
     {{#each posts}}
   <div class="card-body">
-    <h5 class="card-title"> {{posts.job_title}} | {{posts.salary}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{posts.employer_id}} | {{posts.description}} | {{posts.location}}</h6>
-    <h6 class="card-subtitle mb-2 text-muted">{{posts.requirements}} | {{posts.location}}</h6>
+    <h5 class="card-title"> {{this.job_title}} | {{this.salary}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{this.employer_id}} | {{this.description}} | {{this.location}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">{{this.requirements}} | {{this.location}}</h6>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" class="card-link">Lorem ipsum dolor sit amet consectetur...</a>
     <a href="#" class="card-link">Lorem ipsum dolor sit amet consectetur...</a>
