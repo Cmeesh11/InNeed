@@ -1,0 +1,36 @@
+// get form element
+const form = document.querySelector('form');
+
+// add event listener to the form's submit event
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // prevent form from reloading the page
+
+  // get the selected tab (login or register)
+  const selectedTab = document.querySelector('.nav-link.active').getAttribute('href');
+
+  // get form fields values
+  const email = document.querySelector(selectedTab + ' #loginName')?.value || document.querySelector('#registerEmail')?.value;
+  const password = document.querySelector(selectedTab + ' #loginPassword')?.value || document.querySelector('#registerPassword')?.value;
+  const isEmployer = document.querySelector('#employercheck')?.checked;
+  const isJobSeeker = document.querySelector('#jobseeker')?.checked;
+
+  // create data object to send to server
+  const data = {
+    email: email,
+    password: password,
+    isEmployer: isEmployer,
+    isJobSeeker: isJobSeeker
+  };
+
+  // send data to server using AJAX
+  fetch('/submit', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+});
