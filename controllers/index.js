@@ -7,12 +7,13 @@ const apiRouter = require('./api/index');
 router.use('/jobSeeker', jobSeekerRouter);
 router.use('/employer', employerRouter);
 router.use('/api', apiRouter);
-// Routes go here
+
+// Router: Get all Posts
 router.get('/', async function (req, res) {
   try {
     const posts = await Post.findAll();
     res.render('homepage', {
-      loggedIn: req.session.loggedIn,
+      loggedIn: req.session.logged_In,
       posts
     });
   } catch (err) {
@@ -27,7 +28,6 @@ router.get('/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
-module.exports = router;
 
 // Router: Destroy session
 router.get('/logout', (req, res) => {
@@ -38,6 +38,7 @@ router.get('/logout', (req, res) => {
     res.status(500).json(err);
   }
 });
+
 // Router: Create Employer Signup
 router.post('/signupEmployer', async (req, res) => {
   try {
@@ -48,7 +49,8 @@ router.post('/signupEmployer', async (req, res) => {
     res.status(500).json(err);
   }
 });
-// Router: Job Seeker Signup
+
+// Router: Create Job Seeker Signup
 router.post('/signupJobseeker', async (req, res) => {
   try {
     const jobSeeker = await JobSeeker.create(req.body);
@@ -58,3 +60,5 @@ router.post('/signupJobseeker', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+module.exports = router;
