@@ -33,7 +33,9 @@ router.get('/login', async (req, res) => {
 router.get('/logout', (req, res) => {
   try {
     req.session.destroy();
-    res.redirect('/login');
+    res.render('dashboard', {
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err);
   }
