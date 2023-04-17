@@ -1,61 +1,22 @@
 <section class="container mt-5">
-  <form class="ui form">
-    <h4 class="ui dividing header">Employer Information</h4>
-    <div class="field">
-      <label>Name</label>
-      <div class="two fields">
-        <div class="field">
-          <input
-            type="text"
-            name="employer[first-name]"
-            placeholder="First Name"
-            required
-          />
-        </div>
-        <div class="field">
-          <input
-            type="text"
-            name="employer[last-name]"
-            placeholder="Last Name"
-            required
-          />
-        </div>
-      </div>
-    </div>
-    <div class="field">
-      <div class="two fields">
-        <div class="field">
-          <label>Email Address</label>
-          <input type="email" name="employer[email]" placeholder="Email" required/>
-        </div>
-        <div class="field">
-          <label>Company Name</label>
-          <input
-            type="text"
-            name="employer[company]"
-            placeholder="Company Name"
-            required
-          />
-        </div>
-      </div>
-    </div>
-    <h4 class="ui dividing header">Job Information</h4>
+  <form class="ui inverted form" id="post-form">
+    <h4 class="ui inverted dividing header">Job Information</h4>
     <div class="field">
       <div class="two fields">
         <div class="field">
           <label>Job Title</label>
-          <input type="text" name="job[title]" placeholder="Job Title" required/>
+          <input type="text" name="job[title]" placeholder="Job Title" class="job-title" required/>
         </div>
         <div class="field">
           <label>Salary</label>
-          <input type="number" name="job[salary]" placeholder="Salary" required/>
+          <input type="number" name="job[salary]" placeholder="Salary" class="salary" required/>
         </div>
       </div>
     </div>
     <div class="field">
       <div class="field">
         <label>State</label>
-        <select class="ui fluid dropdown dropdown-menu">
+        <select class="ui fluid dropdown" id="dropdown-menu">
           <option value="">State</option>
           <option value="AL">Alabama</option>
           <option value="AK">Alaska</option>
@@ -119,6 +80,7 @@
             type="text"
             name="job[description]"
             placeholder="Enter an overview of the job"
+            class="job-description"
             required
           ></textarea>
         </div>
@@ -128,11 +90,14 @@
             type="text"
             name="job[requirements]"
             placeholder="Enter the requirements for the job"
+            class="requirements"
             required
           ></textarea>
         </div>
       </div>
     </div>
-    <button class="large positive ui button" id="post-job">Post Job</button>
+    <button class="large positive ui button">Post Job</button>
   </form>
 </section>
+
+<script src="/js/postSubmit.js"></script>
