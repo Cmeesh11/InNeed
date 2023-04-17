@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Employer, JobSeeker, Post } = require('../models');
+const { Employer, Post } = require('../models');
 const jobSeekerRouter = require('./jobSeekerRoutes');
 const employerRouter = require('./employerRoutes');
 const apiRouter = require('./api/index');
@@ -36,28 +36,6 @@ router.get('/logout', (req, res) => {
     res.render('dashboard', {
       logged_in: req.session.logged_in
     });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// Router: Create Employer Signup
-router.post('/signupEmployer', async (req, res) => {
-  try {
-    const employer = await Employer.create(req.body);
-    req.session.logged_in = true;
-    req.session.id = employer.id;
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// Router: Create Job Seeker Signup
-router.post('/signupJobseeker', async (req, res) => {
-  try {
-    const jobSeeker = await JobSeeker.create(req.body);
-    req.session.logged_in = true;
-    req.session.id = jobSeeker.id;
   } catch (err) {
     res.status(500).json(err);
   }
