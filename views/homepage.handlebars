@@ -1,12 +1,13 @@
 <div class="container mt-5">
   <h1 class="text-white">Job Posts</h1>
-  {{#each posts}}
+  {{#each posts as |post|}}
   <div class="card my-3 border-light">
-    <div class="card-body">
-      <h2 class="card-title">{{this.dataValues.job_title}}</h2>
-      <h3 class="card-title">${{this.dataValues.salary}} per year</h3>
-      <h6 class="card-subtitle mb-2 text-muted">{{this.dataValues.employer_id}} | {{this.dataValues.description}} | {{this.dataValues.location}}</h6>
-      <h6 class="card-subtitle mb-2 text-muted">{{this.dataValues.requirements}} | {{this.dataValues.location}}</h6>
+    <div class="card-body"> {{log post.employer}}
+      <h2 class="card-title"><span class="fw-bold text-white">Company:</span> {{post.employer.company}}</h2>
+      <h3 class="card-title">{{post.job_title}}</h3>
+      <h4 class="card-title">${{post.salary}} per year</h4>
+      <p class="card-subtitle mb-2 text-muted"><span class='fw-bold text-white'>Description:</span> {{post.description}}</p>
+      <p class="card-subtitle mb-2 text-muted"><span class='fw-bold text-white'>Requirements:</span> {{post.requirements}}</p>
     </div>
   </div> 
   {{/each}}

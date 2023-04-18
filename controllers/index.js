@@ -11,7 +11,16 @@ router.use('/api', apiRouter);
 // Router: Get all Posts
 router.get('/', async function (req, res) {
   try {
-    const posts = await Post.findAll();
+    const postsData = await Post.findAll({
+      include: [
+        {
+          model: Employer
+        }
+      ]
+    }
+    );
+
+    const posts = postsData.map((post) => post.get({ plain: true }));
     res.render('homepage', {
       loggedIn: req.session.logged_In,
       posts

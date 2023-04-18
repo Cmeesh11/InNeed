@@ -1,0 +1,34 @@
+[
+  {
+    "job_title": "Line Cook",
+    "salary": 30000,
+    "state": "NM",
+    "requirements": "Be a hard worker. Customer satisfaction is key. Always be polite.",
+    "description": "Working at Lost Pollos Hermanos is one of the best jobs you can find yourself working at. If you are looking for a consistent job with scalability, here is where you want to work.",
+    "employer_id": 3
+  },
+  {
+    "job_title": "Cashier",
+    "salary": 25000,
+    "state": "NM",
+    "requirements": "Looking for a well presented, polite worker that always comes into work with a smile. Must know how to use a cash register.",
+    "description": "Working at Lost Pollos Hermanos is one of the best jobs you can find yourself working at. If you are looking for a consistent job with scalability, here is where you want to work.",
+    "employer_id": 3
+  },
+  {
+    "job_title": "Salesperson",
+    "salary": 50000,
+    "state": "NM",
+    "requirements": "Very good communication skills are a must. Applicants must be well spoken and are incredibly persuasive. Should have at least 3 years experience in sales.",
+    "description": "You will be selling vacuum cleaners of all shapes and sizes. Working here is a breeze as long as you have a passion for sales and don't mind waiting around a few hours for a customer.",
+    "employer_id": 2
+  },
+  {
+    "job_title": "Receptionist",
+    "salary": 45000,
+    "state": "NM",
+    "requirements": "Good communication skills. Willing to work long hours. Be very good at talking to senior citizens as you'll be dealing with lots of them.",
+    "description": "At Wexler McGill you'll have all of your needs met. You'll be taking phone calls and helping us out in our daily tasks.",
+    "employer_id": 1
+  }
+]

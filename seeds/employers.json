@@ -1,23 +1,23 @@
 [
   {
-    "email": "john",
-    "first_name": ,
-    "last_name": ,
-    "company": ,
-    "password": 
+    "email": "jimmy@gmail.com",
+    "first_name": "Jimmy",
+    "last_name": "Mcgill",
+    "company": "Wexler Mcgill Law Firm",
+    "password": "password12345"
   },
   {
-    "email": ,
-    "first_name": ,
-    "last_name": ,
-    "company": ,
-    "password": 
+    "email": "ed@gmail.com",
+    "first_name": "Ed",
+    "last_name": "Galbraith",
+    "company": "Best Quality Vacuum",
+    "password": "password12345"
   },
   {
-    "email": ,
-    "first_name": ,
-    "last_name": ,
-    "company": ,
-    "password": 
+    "email": "gus@gmail.com",
+    "first_name": "Gus",
+    "last_name": "Fring",
+    "company": "Los Pollos Hermanos",
+    "password": "password12345"
   }
 ]
