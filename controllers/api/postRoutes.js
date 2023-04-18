@@ -1,8 +1,9 @@
 const postRouter = require('express').Router();
 const Post = require('../../models/Post');
+const withEmployerAuth = require('../../utils/employerAuth');
 
 // Create Post
-postRouter.post('/create', async (req, res) => {
+postRouter.post('/create', withEmployerAuth, async (req, res) => {
   try {
     const post = await Post.create({
       ...req.body,
