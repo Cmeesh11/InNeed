@@ -1,14 +1,12 @@
 <div class="container mt-5">
   <h1 class="text-white">Job Posts</h1>
   {{#each posts}}
-  <div class="card">
+  <div class="card my-3 border-light">
     <div class="card-body">
-      <h5 class="card-title"> {{this.dataValues.job_title}} | ${{this.dataValues.salary}}</h5>
+      <h2 class="card-title">{{this.dataValues.job_title}}</h2>
+      <h3 class="card-title">${{this.dataValues.salary}} per year</h3>
       <h6 class="card-subtitle mb-2 text-muted">{{this.dataValues.employer_id}} | {{this.dataValues.description}} | {{this.dataValues.location}}</h6>
       <h6 class="card-subtitle mb-2 text-muted">{{this.dataValues.requirements}} | {{this.dataValues.location}}</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="card-link">Lorem ipsum dolor sit amet consectetur...</a>
-      <a href="#" class="card-link">Lorem ipsum dolor sit amet consectetur...</a>
     </div>
   </div> 
   {{/each}}
