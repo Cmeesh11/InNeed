@@ -1,47 +1,20 @@
 <div class="container">
-  <form>
-      <!-- Email input -->
-      <div class="form-outline mb-4">
-        <input type="email" id="loginName" class="form-control" />
-        <label class="form-label" for="loginName">Email or username</label>
-      </div>
+  <h2 class="text-white">Login</h2>
+  <form class="ui inverted form" id="login-form">
+    <div class="field">
+      <label>Email</label>
+      <input type="text" name="first-name" placeholder="Email" />
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="text" name="last-name" placeholder="Password" />
+    </div>
+   
+    <button class="ui button" type="submit">Submit</button>
+    <p>
+      <a class="mt-5" href="/signup">Don't have an account? Click here to sign up!</a>
+    </p>
+  </form>
+</div>
 
-      <!-- Password input -->
-      <div class="form-outline mb-4">
-        <input type="password" id="loginPassword" class="form-control" />
-        <label class="form-label" for="loginPassword">Password</label>
-      </div>
-
-      <!-- Submit button -->
-      <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-
-      <!-- Email input -->
-      <div class="form-outline mb-4">
-        <input type="email" id="registerEmail" class="form-control" />
-        <label class="form-label" for="registerEmail">Email</label>
-      </div>
-
-      <!-- Password input -->
-      <div class="form-outline mb-4">
-        <input type="password" id="registerPassword" class="form-control" />
-        <label class="form-label" for="registerPassword">Password</label>
-      </div>
-
-      <!-- Checkbox -->
-      <div class="form-check d-flex justify-content-center mb-4">
-        <input class="form-check-input me-2" type="checkbox" value="" id="employercheck" unchecked
-          aria-describedby="RegisterEmployerText" />
-        <label class="form-check-label" for="registerCheck">
-          Employer
-        </label>
-      </div>
-        <input class="form-check-input me-2" type="checkbox" value="" id="jobseeker" unchecked
-          aria-describedby="RegisterJobseekerText" />
-        <label class="form-check-label" for="registerCheck">
-            Job Seeker
-        </label>
-      </div>
-      <!-- Submit button -->
-      <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
-    </form>
-  </div>
+<script src="/js/login.js"></script>

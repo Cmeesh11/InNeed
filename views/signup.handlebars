@@ -1,0 +1,40 @@
+<div class="container">
+  <h2 class="text-white">Sign Up</h2>
+  <form class="ui inverted form" id="signup-form">
+    <div class="field">
+      <label>Email</label>
+      <input type="text" name="first-name" placeholder="Email" />
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="text" name="last-name" placeholder="Password" />
+    </div>
+    <div class="field" id="company-input">
+      <label>Company</label>
+      <input type="text" name="last-name" placeholder="Password" />
+    </div>
+    <button class="ui button" type="submit">Submit</button>
+  <div class="inline fields">
+    <label for="role">Select your role: </label>
+    <div class="field">
+      <div class="ui radio checkbox" id="jobseeker-checkbox">
+        <input
+          type="radio"
+          name="role"
+          checked=""
+          tabindex="0"
+          class="hidden"
+        />
+        <label>Job Seeker</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox" id="employer-checkbox">
+        <input type="radio" name="role" tabindex="0" class="hidden" />
+        <label>Employer</label>
+      </div>
+    </div>
+  </div>
+  </form>
+</div>
+<script src="/js/login.js"></script>
