@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Hello {{employer.first_name}}! Here are your job posts:</h1>
+  {{#each employer.posts as |post|}}
+  <div class="card" style="width: 12rem">
+    <div class="card-title">{{post.job_title}}</div>
+    <div class="card-text">{{post.description}}</div>
+  </div>
+  {{/each}}
+</div>
