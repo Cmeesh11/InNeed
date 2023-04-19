@@ -1,3 +1,4 @@
+// Modules
 const { join } = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -30,17 +31,22 @@ const sess = {
   })
 };
 
+// Using session middleware
 app.use(session(sess));
 
+// Setting handlebars as the engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+// Middle ware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, 'public')));
 
+// Linking routes
 app.use(routes);
 
+// Performs an SQL query on the database
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 });
