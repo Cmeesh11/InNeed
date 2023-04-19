@@ -61,6 +61,9 @@ If you are using the repository for testing purposes, it is recommended that you
 
 This can be done by typing ```npm run seed``` into the terminal.
 
+## Deployed Heroku Link
+[Link](https://limitless-bastion-45825.herokuapp.com/)
+
 ## Questions
 
 Check out our repositories by clicking on the project contributers name above!
