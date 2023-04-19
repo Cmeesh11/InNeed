@@ -15,6 +15,7 @@ $('#post-form').on('submit', async (event) => {
       headers: { 'Content-Type': 'application/json' }
     });
     if (response.ok) {
+      // Redirects to confirmation page
       document.location.replace('/employer/confirm');
     }
   } catch (err) {

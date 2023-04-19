@@ -1,5 +1,8 @@
 <div class="container mt-5">
   <h1 class="text-white">Job Posts</h1>
+  {{#if !posts.length}}
+  <h1>There are currently no posts to view</h1>
+  {{/if}}
   {{#each posts as |post|}}
   <div class="card my-3 border-light">
     <div class="card-body"> {{log post.employer}}
