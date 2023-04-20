@@ -10,6 +10,8 @@ InNeed is an application that allows employers to create job postings that poten
 - [License](#license)
 - [Contributing](#project-contributors)
 - [Tests](#tests)
+- [Screenshot](#screenshot)
+- [Link to Application](#deployed-heroku-link)
 - [Questions](#questions)
 
 ## Installation
@@ -60,6 +62,10 @@ This project uses the MIT license.
 If you are using the repository for testing purposes, it is recommended that you seed the database.
 
 This can be done by typing ```npm run seed``` into the terminal.
+
+## Screenshot
+
+![website screenshot](assets/images/inneed.png)
 
 ## Deployed Heroku Link
 [Link](https://limitless-bastion-45825.herokuapp.com/)
