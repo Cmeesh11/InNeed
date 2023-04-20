@@ -28,9 +28,9 @@ You will need to set up a .env file.
 This can be done by creating a file named .env in the root directory of the folder structure, and using the .env.EXAMPLE as a reference to what values need to be entered.
 ## Usage
 
-When first starting the application, you should be on the homepage. This is where the existing job posts will be displayed, showing various information about them.
+When first starting the application, you will be on the homepage. This is where the existing job posts will be displayed, showing various information about them.
 
-In the navigation bar at the top of the page should be a Sign In/Sign Up button. Click here to be brought the the login page. If you do not have an account, you can create one by clicking on the link at the bottom of the form.
+In the navigation bar at the top of the page will be a Sign In/Sign Up button. Click here to be brought the the login page. If you do not have an account, you can create one by clicking on the link at the bottom of the form.
 
 If you created an account as an Employer, this will grant you the accessibility to create new job posts. To do so, click on "New Post" in the navigation bar. Here, you can enter the details of the job and create a new post.
 
