@@ -2,13 +2,13 @@
   <h1 class="text-white">Job Posts</h1>
   {{#if posts}}
   {{#each posts as |post|}}
-  <div class="card my-3 border-light">
-    <div class="card-body">
-      <h2 class="card-title"><span class="fw-bold text-white">Company:</span> {{post.employer.company}}</h2>
-      <h3 class="card-title">{{post.job_title}}</h3>
-      <h4 class="card-title">${{post.salary}} per year</h4>
-      <p class="card-subtitle mb-2 text-muted"><span class='fw-bold text-white'>Description:</span> {{post.description}}</p>
-      <p class="card-subtitle mb-2 text-muted"><span class='fw-bold text-white'>Requirements:</span> {{post.requirements}}</p>
+  <div class="card my-3 border-light shadow-lg">
+    <div class="card-body" style="background-color: #2A363B">
+      <h2 class="card-title text-white"><span class="fw-bold text-white">Company:</span> {{post.employer.company}}</h2>
+      <h3 class="card-title text-white">{{post.job_title}}</h3>
+      <h4 class="card-title text-white">${{post.salary}} per year</h4>
+      <p class="card-subtitle mb-2 text-white"><span class='fw-bold text-white'>Description:</span> {{post.description}}</p>
+      <p class="card-subtitle mb-2 text-white"><span class='fw-bold text-white'>Requirements:</span> {{post.requirements}}</p>
     </div>
   </div> 
   {{/each}}

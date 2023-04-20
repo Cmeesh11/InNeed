@@ -1,12 +1,12 @@
 <div class="container">
   <h1 class="text-white">Here are your job posts:</h1>
   {{#each posts as |post|}}
-  <div class="card my-3 border-light">
-    <div class="card-body">
+  <div class="card my-3 border-light shadow-lg" style="background-color: #2A363B">
+    <div class="card-body text-white">
       <h3 class="card-title text-white">{{post.job_title}}</h3>
-      <h4 class="card-title">${{post.salary}} per year</h4>
-      <p class="card-subtitle mb-2 text-muted"><span class='fw-bold text-white'>Description:</span> {{post.description}}</p>
-      <p class="card-subtitle mb-2 text-muted"><span class='fw-bold text-white'>Requirements:</span> {{post.requirements}}</p>
+      <h4 class="card-title text-white">${{post.salary}} per year</h4>
+      <p class="card-subtitle mb-2 text-white"><span class='fw-bold text-white'>Description:</span> {{post.description}}</p>
+      <p class="card-subtitle mb-2 text-white"><span class='fw-bold text-white'>Requirements:</span> {{post.requirements}}</p>
     </div>
   </div> 
   {{/each}}
