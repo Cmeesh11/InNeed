@@ -69,6 +69,9 @@ const signupHandlerJobseeker = async (event) => {
     });
     if (response.ok) {
       document.location.replace('/');
+    } else {
+      alert('There was an error when signing up. Please try again.');
+      document.location.replace('/signup');
     }
   } catch (err) {
     alert('Signup Unsuccessful');
@@ -93,6 +96,9 @@ const signupHandlerEmployer = async (event) => {
     });
     if (response.ok) {
       document.location.replace('/');
+    } else {
+      alert('There was an error when signing up. Please try again.');
+      document.location.replace('/signup');
     }
   } catch (err) {
     alert('Signup Unsuccessful');
