@@ -19,6 +19,9 @@ const loginHandlerEmployer = async (event) => {
     });
     if (response.ok) {
       document.location.replace('/');
+    } else {
+      alert('Incorrect email or password');
+      document.location.replace('/login');
     }
   } catch (err) {
     alert('Login Unsuccessful');
@@ -40,6 +43,9 @@ const loginHandlerJobseeker = async (event) => {
     });
     if (response.ok) {
       document.location.replace('/');
+    } else {
+      alert('Incorrect email or password');
+      document.location.replace('/login');
     }
   } catch (err) {
     alert('Login Unsuccessful');
