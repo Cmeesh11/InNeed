@@ -30,12 +30,7 @@ employerRouter.get('/dashboard', withEmployerAuth, async (req, res) => {
     const postData = await Post.findAll({
       where: {
         employer_id: req.session.employer_id
-      },
-      include: [
-        {
-          model: Employer
-        }
-      ]
+      }
     });
     const posts = postData.map((post) => post.get({ plain: true }));
     res.render('employerDashboard', {
