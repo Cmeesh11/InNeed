@@ -3,15 +3,23 @@
   <form class="ui inverted form" id="signup-form">
     <div class="field">
       <label>Email</label>
-      <input type="text" name="first-name" placeholder="Email" />
+      <input type="email" name="first-name" placeholder="Email" id="signup-email" />
+    </div>
+    <div class="field">
+      <label>First Name</label>
+      <input type="text" placeholder="First Name" id="signup-first-name" />
+    </div>
+    <div class="field">
+      <label>Last Name</label>
+      <input type="text" placeholder="Last Name" id="signup-last-name" />
     </div>
     <div class="field">
       <label>Password</label>
-      <input type="text" name="last-name" placeholder="Password" />
+      <input type="password" name="last-name" placeholder="Password" id="signup-password"/>
     </div>
     <div class="field" id="company-input">
       <label>Company</label>
-      <input type="text" name="last-name" placeholder="Company Name" />
+      <input type="text" name="last-name" placeholder="Company Name" id="signup-company"/>
     </div>
 
     <div class="inline fields">
@@ -24,13 +32,14 @@
             checked=""
             tabindex="0"
             class="hidden"
+            id="jobseeker-input"
           />
           <label>Job Seeker</label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox" id="employer-checkbox">
-          <input type="radio" name="role" tabindex="0" class="hidden" />
+          <input type="radio" name="role" tabindex="0" class="hidden" id="employer-input"/>
           <label>Employer</label>
         </div>
       </div>
