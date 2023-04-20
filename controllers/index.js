@@ -22,7 +22,8 @@ router.get('/', async function (req, res) {
 
     const posts = postsData.map((post) => post.get({ plain: true }));
     res.render('homepage', {
-      loggedIn: req.session.logged_In,
+      logged_in: req.session.logged_in,
+      employer: req.session.employer,
       posts
     });
   } catch (err) {

@@ -2,7 +2,7 @@
 const logout = $('#logout');
 
 // Fetches logout route on click if the logout button exists
-if (logout) {
+if (logout.length) {
   logout.on('click', async () => {
     const response = await fetch('/api/user/logout', {
       method: 'POST',

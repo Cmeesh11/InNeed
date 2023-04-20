@@ -5,6 +5,95 @@ const employerCheckbox = $('#employer-checkbox');
 const jobseekerCheckbox = $('#jobseeker-checkbox');
 const companyInput = $('#company-input');
 
+const loginHandlerEmployer = async (event) => {
+  event.preventDefault();
+  // Selecting elements
+  const email = $('#login-email').val().trim();
+  const password = $('#login-password').val().trim();
+
+  try {
+    const response = await fetch('/api/user/employerLogin', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    if (response.ok) {
+      document.location.replace('/');
+    }
+  } catch (err) {
+    alert('Login Unsuccessful');
+    document.location.replace('/login');
+  }
+};
+
+const loginHandlerJobseeker = async (event) => {
+  event.preventDefault();
+  // Selecting elements
+  const email = $('#login-email').val().trim();
+  const password = $('#login-password').val().trim();
+
+  try {
+    const response = await fetch('/api/user/jobSeekerLogin', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    if (response.ok) {
+      document.location.replace('/');
+    }
+  } catch (err) {
+    alert('Login Unsuccessful');
+    document.location.replace('/login');
+  }
+};
+
+const signupHandlerJobseeker = async (event) => {
+  event.preventDefault();
+  // Selecting elements
+  const email = $('#signup-email').val().trim();
+  const password = $('#signup-password').val().trim();
+  const firstName = $('#signup-first-name').val().trim();
+  const lastName = $('#signup-last-name').val().trim();
+
+  try {
+    const response = await fetch('/api/user/signupJobseeker', {
+      method: 'POST',
+      body: JSON.stringify({ email, password, first_name: firstName, last_name: lastName }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    if (response.ok) {
+      document.location.replace('/');
+    }
+  } catch (err) {
+    alert('Signup Unsuccessful');
+    document.location.replace('/signup');
+  }
+};
+
+const signupHandlerEmployer = async (event) => {
+  event.preventDefault();
+  // Selecting elements
+  const email = $('#signup-email').val().trim();
+  const firstName = $('#signup-first-name').val().trim();
+  const lastName = $('#signup-last-name').val().trim();
+  const password = $('#signup-password').val().trim();
+  const company = $('#signup-company').val().trim();
+
+  try {
+    const response = await fetch('/api/user/signupEmployer', {
+      method: 'POST',
+      body: JSON.stringify({ email, password, first_name: firstName, last_name: lastName, company }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    if (response.ok) {
+      document.location.replace('/');
+    }
+  } catch (err) {
+    alert('Signup Unsuccessful');
+    document.location.replace('/signup');
+  }
+};
+
 // Initiating checkbox function on all checkbox items
 $('.ui.radio.checkbox').checkbox();
 
@@ -18,29 +107,22 @@ jobseekerCheckbox.on('click', () => {
   companyInput.hide();
 });
 
-companyInput.hide();
-
-// When form is submitted, confirmation page is rendered
-$('#post-form').on('submit', async (event) => {
-  event.preventDefault();
-  // Selecting elements
-  const jobTitle = $('.job-title').val().trim();
-  const salary = $('.salary').val().trim();
-  const state = $('#dropdown-menu').val();
-  const requirements = $('.requirements').val().trim();
-  const description = $('.job-description').val().trim();
-
-  try {
-    const response = await fetch('/api/post/create', {
-      method: 'POST',
-      body: JSON.stringify({ job_title: jobTitle, salary, state, requirements, description }),
-      headers: { 'Content-Type': 'application/json' }
-    });
-    if (response.ok) {
-      document.location.replace('/employer/confirm');
-    }
-  } catch (err) {
-    alert('Post was not created. Please try again');
-    document.location.replace('/employer/post');
+loginForm.on('submit', (event) => {
+  if ($('#jobseeker-login-input').prop('checked')) {
+    loginHandlerJobseeker(event);
+  } else {
+    loginHandlerEmployer(event);
   }
 });
+
+signupForm.on('submit', (event) => {
+  console.log($('#jobseeker-input').prop('checked'));
+  if ($('#jobseeker-input').prop('checked')) {
+    signupHandlerJobseeker(event);
+  } else {
+    signupHandlerEmployer(event);
+  }
+});
+
+// Hides company field on page load
+companyInput.hide();

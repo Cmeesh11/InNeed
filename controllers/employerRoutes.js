@@ -27,18 +27,21 @@ employerRouter.get('/confirm', withEmployerAuth, (req, res) => {
 
 employerRouter.get('/dashboard', withEmployerAuth, async (req, res) => {
   try {
-    const employerData = await Employer.findOne({
+    const postData = await Post.findAll({
       where: {
-        id: req.session.employer_id
+        employer_id: req.session.employer_id
       },
-      include: {
-        model: Post
-      }
+      include: [
+        {
+          model: Employer
+        }
+      ]
     });
-    const employer = employerData.map((employer) => employer.get({ plain: true }));
+    const posts = postData.map((post) => post.get({ plain: true }));
     res.render('employerDashboard', {
       logged_in: req.session.logged_in,
-      employer
+      employer: req.session.employer,
+      posts
     });
   } catch (err) {
     res.status(404).json(err);

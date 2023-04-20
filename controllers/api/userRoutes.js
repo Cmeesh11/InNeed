@@ -9,7 +9,10 @@ userRouter.post('/signupEmployer', async (req, res) => {
     req.session.logged_in = true;
     req.session.employer = true;
     req.session.employer_id = employer.id;
-    req.session.save();
+    req.session.save((err) => {
+      if (err) throw err;
+    });
+    res.status(200).json({ message: 'Successfully created employer' });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -22,7 +25,10 @@ userRouter.post('/signupJobseeker', async (req, res) => {
     req.session.logged_in = true;
     req.session.jobSeeker = true;
     req.session.jobseeker_id = jobSeeker.id;
-    req.session.save();
+    req.session.save((err) => {
+      if (err) throw err;
+    });
+    res.status(200).json({ message: 'Successfully signed up as job seeker' });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -42,7 +48,9 @@ userRouter.post('/jobSeekerlogin', async (req, res) => {
       req.session.logged_in = true;
       req.session.jobSeeker = true;
       req.session.jobSeeker_id = jobSeeker.id;
-      req.session.save();
+      req.session.save((err) => {
+        if (err) throw err;
+      });
       res.status(200).json({ message: 'Successfully logged in!' });
     } else {
       res.status(400).json({ message: 'Incorrect email or password' });
@@ -66,7 +74,9 @@ userRouter.post('/employerLogin', async (req, res) => {
       req.session.logged_in = true;
       req.session.employer = true;
       req.session.employer_id = employer.id;
-      req.session.save();
+      req.session.save((err) => {
+        if (err) throw err;
+      });
       res.status(200).json({ message: 'Successfully logged in!' });
     } else {
       res.status(400).json({ message: 'Incorrect email or password' });
@@ -77,7 +87,7 @@ userRouter.post('/employerLogin', async (req, res) => {
 });
 
 // Router: Destroy session
-userRouter.get('/logout', (req, res) => {
+userRouter.post('/logout', (req, res) => {
   try {
     req.session.destroy(() => {
       res.status(204).end();

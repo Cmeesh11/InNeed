@@ -1,9 +1,13 @@
 <div class="container">
-  <h1>Hello {{employer.first_name}}! Here are your job posts:</h1>
-  {{#each employer.posts as |post|}}
-  <div class="card" style="width: 12rem">
-    <div class="card-title">{{post.job_title}}</div>
-    <div class="card-text">{{post.description}}</div>
-  </div>
+  <h1 class="text-white">Here are your job posts:</h1>
+  {{#each posts as |post|}}
+  <div class="card my-3 border-light">
+    <div class="card-body">
+      <h3 class="card-title text-white">{{post.job_title}}</h3>
+      <h4 class="card-title">${{post.salary}} per year</h4>
+      <p class="card-subtitle mb-2 text-muted"><span class='fw-bold text-white'>Description:</span> {{post.description}}</p>
+      <p class="card-subtitle mb-2 text-muted"><span class='fw-bold text-white'>Requirements:</span> {{post.requirements}}</p>
+    </div>
+  </div> 
   {{/each}}
 </div>
