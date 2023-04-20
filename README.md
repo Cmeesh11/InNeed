@@ -8,7 +8,7 @@ InNeed is an application that allows employers to create job postings that poten
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contributing](#contributing)
+- [Contributing](#project-contributors)
 - [Tests](#tests)
 - [Questions](#questions)
 
