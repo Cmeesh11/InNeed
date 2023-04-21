@@ -42,7 +42,7 @@ userRouter.post('/jobSeekerlogin', async (req, res) => {
       }
     });
     if (!jobSeeker) {
-      res.status(400).json({ message: 'Incorrect email or password' });
+      return res.status(404).json({ message: 'Incorrect email or password' });
     }
     if (jobSeeker.checkPassword(req.body.password)) {
       req.session.logged_in = true;
@@ -68,7 +68,7 @@ userRouter.post('/employerLogin', async (req, res) => {
       }
     });
     if (!employer) {
-      res.status(400).json({ message: 'Incorrect email or password' });
+      return res.status(404).json({ message: 'Incorrect email or password' });
     }
     if (employer.checkPassword(req.body.password)) {
       req.session.logged_in = true;
@@ -79,7 +79,7 @@ userRouter.post('/employerLogin', async (req, res) => {
       });
       res.status(200).json({ message: 'Successfully logged in!' });
     } else {
-      res.status(400).json({ message: 'Incorrect email or password' });
+      res.status(404).json({ message: 'Incorrect email or password' });
     }
   } catch (err) {
     res.status(404).json(err);
